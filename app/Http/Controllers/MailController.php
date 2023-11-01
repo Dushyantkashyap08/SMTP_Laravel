@@ -9,12 +9,18 @@ class MailController extends Controller
 {
     public function index()
     {
+        return view('welcome');
+    }
+
+    public function sendEmail(Request $request)
+    {
+        $user=$request->get('email');
         $mailData = [
             'title' => 'Mail from Dushyant',
             'body' => 'This is testing email using SMTP',
         ];
 
-        Mail::to('himanshulpu1@gmail.com')->send(new DemoMail($mailData));
+        Mail::to($user)->send(new DemoMail($mailData));
 
 
         dd('Email sent successfully');
