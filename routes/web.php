@@ -13,6 +13,6 @@ use App\Http\Controllers\MailController;
 |
 */
 
-Route::get('/', [MailController::class,'index']);
 
-Route::get('send-mail',[MailController::class,'sendEmail']);
+Route::get('/email', [MailController::class, 'form']); //to show form
+Route::post('/send-mail', [MailController::class, 'send'])->name('sendmail');//to send mail

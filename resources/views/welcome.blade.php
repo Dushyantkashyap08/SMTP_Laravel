@@ -7,9 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="{{url('send-mail')}}">
+    <form action="{{url('send-mail')}}" method="post">
         {{ csrf_field() }}
-        Enter Email <input type="text" name="email" >
+        Enter Email <input type="text" name="mail" ><br>
+        {{-- Enter Text <input type="textarea" name="text" placeholder="enter body here.."><br> --}}
         <input type="submit" value="Send Email">
     </form>
 </body>
